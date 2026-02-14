@@ -1,1 +1,29 @@
+/ {
+    keymap {
+        compatible = "zmk,keymap";
 
+        default_layer {
+            bindings = <
+                &kp Q  &kp W  &kp E  &kp R  &kp T
+                &kp A  &kp S  &kp D  &kp F  &kp G
+                &kp Z  &kp X  &kp C  &kp V  &kp B
+            >;
+        };
+
+        lower_layer {
+            bindings = <
+                &kp 1  &kp 2  &kp 3  &kp 4  &kp 5
+                &kp 6  &kp 7  &kp 8  &kp 9  &kp 0
+                &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH
+            >;
+        };
+
+        raise_layer {
+            bindings = <
+                &kp EXCL &kp AT   &kp HASH &kp DLLR &kp PRCNT
+                &kp CARET &kp AMPS &kp STAR &kp LPAR &kp RPAR
+                &kp UNDERSCORE &kp PLUS &kp LCBR &kp RCBR &kp PIPE
+            >;
+        };
+    };
+};
