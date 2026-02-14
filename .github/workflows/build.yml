@@ -24,3 +24,9 @@ jobs:
       - name: Build firmware
         run: |
           west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=bat43
+
+      - name: Upload firmware artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: bat43-firmware
+          path: build/zephyr/*.uf2
