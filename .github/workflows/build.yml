@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           submodules: recursive
 
@@ -26,7 +26,7 @@ jobs:
           west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=bat43
 
       - name: Upload firmware artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: bat43-firmware
+          name: bat43-nice_nano_v2
           path: build/zephyr/*.uf2
