@@ -23,14 +23,16 @@ jobs:
       - name: Initialize west
         run: |
           west init -l zmk/app
+          cd zmk
           west update
 
       - name: Build firmware
         run: |
-          west build -s zmk/app -b nice_nano_v2 -- -DSHIELD=bat43
+          cd zmk
+          west build -s app -b nice_nano_v2 -- -DSHIELD=bat43
 
       - name: Upload firmware artifact
         uses: actions/upload-artifact@v4
         with:
           name: bat43-nice_nano_v2
-          path: build/zephyr/*.uf2
+          path: zmk/build/zephyr/*.uf2
